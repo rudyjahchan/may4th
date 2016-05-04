@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>May the 4th Be You!</title>
+    <meta name="description" content="Hello, World! • A-Frame">
+    <script src="https://aframe.io/releases/0.2.0/aframe.min.js"></script>
+    <script src="/js/app.js"></script>
+  </head>
+  <body>
+    <a-scene>
+      <a-assets>
+        <img id="starfield" src="img/starfield.jpeg">
+        <img id="logo" src="img/starwarslogo.png">
+        <img id="lucas" src="img/lucas.png">
+        <img id="text" src="img/text.png">
+        <img id="deathstar" src="img/deathstar.jpg">
+        <audio src="sounds/starwars.mp3" autoplay>
+      </a-assets>
+      <a-image src="#logo" width="184" height="79">
+        <a-animation attribute="position"
+                     to="0 0 -1200"
+                     easing="linear"
+                     dur="12000">
+        </a-animation>
+        <a-animation attribute="opacity"
+                     from="1"
+                     to="0"
+                     easing="linear"
+                     begin="7500"
+                     dur="5000">
+        </a-animation>
+      </a-image>
+      <a-image position="0 0 30" src="#lucas" width="30.0" height="37.2">
+      </a-image>
+      <a-entity>
+        <a-image src="#text"
+          rotation="-90 0 0" position="0 -5 30" width="18.12" height="58.76">
+        </a-image>
+        <a-animation attribute="position"
+                     to="0 -5 -1000"
+                     begin="4000"
+                     easing="linear"
+                     dur="900000">
+        </a-animation>
+      </a-entity>
+      <a-sphere radius="5" position="-20 5 0" material="src: #deathstar">
+        <a-animation attribute="rotation"
+                     to="0 360"
+                     easing="linear"
+                     repeat="infinite"
+                     dur="50000">
+      </a-sphere>
+      <a-sky src="#starfield"></a-sky>
+    </a-scene>
+  </body>
+</html>
